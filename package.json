@@ -1,0 +1,23 @@
+{
+  "name": "nodejs",
+  "version": "1.0.0",
+  "description": "",
+  "main": "Server.js",
+  "engine": {
+    "node": ">=20.11.0"
+  },
+  "scripts": {
+    "test": "node Server.js",
+    "start": "node Server.js"
+  },
+  "engines": {
+    "node": ">=18.16.1"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "dependencies": {
+    "axios": "^1.6.7",
+    "express": "^4.18.2"
+  }
+}

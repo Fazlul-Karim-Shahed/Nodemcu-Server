@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Nodemcu</title>
+</head>
+
+<body>
+
+
+    <h1 style="text-align: center; margin: 10px 0px;">This page will refresh in every 2 seconds</h1>
+
+    <div style="text-align: center;">
+        <h3>Temperature: <span id="temp"></span> <br></h3>
+        <h3>Humidity: <span id="hmd"></span></h3>
+        <!-- <h3>Gas Level: <span id="gasLevel"></span></h3>
+        <h3>Temperature-2: <span id="temperature2"></span></h3>
+        <h3>pressure: <span id="pressure"></span></h3>
+        <h3>altitude: <span id="altitude"></span></h3>
+        <h3>seaPressure: <span id="seaPressure"></span></h3>
+        <h3>realAltitude: <span id="realAltitude"></span></h3> -->
+        <h3>moisture: <span id="moisture"></span></h3>
+    </div>
+
+
+    <script src="https://unpkg.com/axios/dist/axios.min.js"></script>
+    <script>
+        window.setInterval(function () {
+            axios.get('https://reserveticket-2b51b-default-rtdb.firebaseio.com/Test/-Nr1kJYXDR5pXpkdc3Gg.json').then(data => {
+                console.log(data.data.temperature);
+                document.getElementById('temp').innerText = data.data.temperature
+                document.getElementById('hmd').innerText = data.data.humidity
+                // document.getElementById('gasLevel').innerText = data.data.gasLevel
+                // document.getElementById('temperature2').innerText = data.data.temperature2
+                // document.getElementById('pressure').innerText = data.data.pressure
+                // document.getElementById('altitude').innerText = data.data.altitude
+                // document.getElementById('seaPressure').innerText = data.data.seaPressure
+                // document.getElementById('realAltitude').innerText = data.data.realAltitude
+                document.getElementById('moisture').innerText = data.data.moisture
+
+            })
+        }, 2000);
+
+
+    </script>
+
+
+</body>
+
+</html>
